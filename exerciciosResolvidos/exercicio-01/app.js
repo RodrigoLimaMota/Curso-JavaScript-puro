@@ -8,7 +8,7 @@ Faça o seguinte:
 - Remova as meta tags desnecessárias;
 - Modifique o title para "Exercício 01";
 - E linke este arquivo, app.js, antes do fechamento da tag body.
-*/
+*/ 
 
 
 /*
@@ -77,9 +77,11 @@ console.log(myAge)
 - Observe o resultado no console do browser.
 
 Não se assuste com as crases e os cifrões. Conversaremos mais sobre operações  
-matemáticas e strings (textos) em breve =)
+matemáticas e strings (textos) em breve =)  
 */
+
 const ten = 10
+
 console.log(`Em ${currentYear + ten}, estarei com ${myAge + ten} anos.`)
 
 /*
