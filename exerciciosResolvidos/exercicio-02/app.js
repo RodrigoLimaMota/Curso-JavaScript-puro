@@ -1,6 +1,6 @@
 /*
 01 - No index.html deste diretório (exercicio-02):
-
+ 
 - Declare uma marcação HTML;
 - Modifique a linguagem para português do Brasil;
 - Remova as meta tags desnecessárias;
@@ -18,7 +18,7 @@
 Utilize os espaços entre os comentários abaixo para executar os códigos dos exercícios. Inclusive este.
 */
 
-
+// console.log('Grandes poderes trazem grandes responsabilidades.')
 
 /*
 04 - Comente o console.log acima, e:
@@ -30,8 +30,11 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - Exiba a "myFavoriteTom" no console do browser.
 */
 
-
-
+const tom = 'Tom'
+const fistTom = 'Hanks'
+const secondTom = 'Cruise'
+const myFavoriteTom = tom + ' ' + secondTom
+console.log(myFavoriteTom)
 /*
 05 - Comente o console.log acima, e:
 
