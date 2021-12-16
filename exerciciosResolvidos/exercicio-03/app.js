@@ -22,7 +22,7 @@ let brazilianFoods = []
 - Exiba a brazilianFoods no console.
 */
 
-brazilianFoods.push('Coxinha',null,'Brigadeiro')
+brazilianFoods.push('Coxinha', null, 'Brigadeiro')
 // console.log(brazilianFoods)
 
 
@@ -52,7 +52,7 @@ mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
 
-const foodsInfo =  `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length}  itens: 
+const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length}  itens: 
 ${brazilianFoods[0]}, ${brazilianFoods[1]} e ${brazilianFoods[2]}.`
 
 // console.log(foodsInfo)
@@ -69,8 +69,8 @@ itens "Lilica" e "Matilda";
 - Exiba a "dogNames" no console.
 */
 
-const maleDogNames = ['Chico','Zeca']
-const femaleDogNames = ['Lilica','Matilda']
+const maleDogNames = ['Chico', 'Zeca']
+const femaleDogNames = ['Lilica', 'Matilda']
 let dogNames = maleDogNames.concat(femaleDogNames)
 
 // console.log(dogNames)
@@ -101,7 +101,7 @@ agora é "Lilica".
 */
 
 dogNames.pop()
-let lastDogName = dogNames.length-1
+let lastDogName = dogNames.length - 1
 
 // console.log(dogNames[lastDogName])
 
@@ -150,8 +150,11 @@ constante que você criou.
 'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
 */
 
-console.log(dogNames)
-const dessert = `${dogNames[]}`
+const dessert = `${dogNames[0].slice(3)}${dogNames[1].slice(2)}${dogNames[3].slice(2)}`
+const doce = dessert.replace('n', 'd')
+
+// console.log(`A ${doce} é um doce à base de coco, tradicional na América Latina e em Angola.`)
+
 
 /*
 12 - Comente o console.log acima e:
@@ -165,3 +168,7 @@ elevado ao cubo, faça o 2º item do array receber todo o valor que ele
 já tem, mais 4;
 - Agora, o resultado exibido no console deve ser 729.
 */
+
+let oddNumbers = [3, 5, 7]
+oddNumbers[1] += 4
+console.log(oddNumbers[1] ** 3)
