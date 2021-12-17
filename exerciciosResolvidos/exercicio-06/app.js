@@ -23,7 +23,16 @@
     "Nem pera nem abacaxi existem no array "fruits".".
 */
 
-const fruits = ['morango', 'banana', 'mamão']
+// const fruits = ['morango', 'banana', 'mamão']
+
+// if (fruits.includes('abacaxi')) {
+//   console.log('A string "abacaxi" existe no array fruits.')
+// } else if (fruits.includes('pera')) {
+//   console.log('A string "pera" existe no array fruits.')
+// } else {
+//   console.log('Nem pera nem abacaxi existem no array "fruits".')
+// }
+
 
 /*
   02
@@ -38,23 +47,44 @@ const fruits = ['morango', 'banana', 'mamão']
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
 
+const currentHours = 13
+// const isMorning = currentHours >= 6 && currentHours < 12
+// const isAfternoon = currentHours >= 12 && currentHours < 18
+
+// if (isMorning) {
+//   console.log('Bom dia!')
+// } else if (isAfternoon) {
+//   console.log('Boa tarde!')
+// } else {
+//   console.log('Boa noite!')
+// }
+
 /*
   03
-
+ 
   - Armazene sua idade em uma constante;
   - Escreva uma estrutura condicional em que, se a idade é 7 anos ou menos, ou  
     se a idade é 65 anos ou mais, a frase "Para você, a entrada é grátis!" é  
-    armazenada em uma variável;
-  - Se a idade não atende às condições acima, a variável deve armazenar a  
-    mensagem "A entrada é R$ 30,00.";
+    armazenada em uma variável;const
   - Exiba a mensagem no console;
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+const age = 5
+let billingMessage = ''
+// const isChild = age <= 7
+// const isOlder = age >= 65
+
+// if (isChild || isOlder) {
+//   billingMessage = 'Para você, a entrada é grátis!'
+// } else {
+//   billingMessage = 'A entrada é R$ 30,00.'
+// }
+// console.log(billingMessage)
 
 /*
   04
-
+ 
   - Utilize um for loop para gerar um novo array com apenas os números entre  
     11 e 90 presentes no array "numbers" (incluindo 11 e 90);
   - Exiba o novo array no console;
@@ -62,6 +92,19 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+const numbersBetween11And90 = []
+
+for (let i = 0; i < numbers.length; i++) {
+
+  const number = numbers[i]
+  const isnumbersBetween11And90 = number >= 11 && number <= 90
+
+  if (isnumbersBetween11And90) {
+    numbersBetween11And90.push(number)
+  }
+
+}
+// console.log(numbersBetween11And90)
 
 /*
   05
@@ -77,22 +120,64 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let amountBooleans = 0
+let amountNumbers = 0
+let amountStrings = 0
+
+for (let i = 0; i <= crazyArray.length; i++) {
+
+  const isNumber = typeof crazyArray[i] === 'number'
+  const isString = typeof crazyArray[i] === 'string'
+
+  if (typeof crazyArray[i] === 'string') {
+    amountStrings++
+  } else if (typeof crazyArray[i] === 'number') {
+    amountNumbers++
+  } else {
+    amountBooleans++
+  }
+
+}
+
+// console.log(`O crazyArray tem ${amountBooleans} booleans, ${amountNumbers} números e ${amountStrings} strings.`)
 
 /*
   06
 
-  - Abaixo do array "randomNumbers", utilize um for loop para gerar 2 novos  
-    arrays: um array com apenas os números ímpares do "randomNumbers" e um outro  
+  - Abaixo do array "randomNumbers", utilize um for loop para gerar 2 novos
+    arrays: um array com apenas os números ímpares do "randomNumbers" e um outro
     array com apenas os números pares;
-  - Após isso, utilizando os dois arrays que você criou, exiba a frase abaixo  
-    no console, substituindo "XX, XX e XX" pelos números corretos. Os números  
-    da frase não devem ser inseridos com a notação "item[index]" e os "e" antes  
+  - Após isso, utilizando os dois arrays que você criou, exiba a frase abaixo
+    no console, substituindo "XX, XX e XX" pelos números corretos. Os números
+    da frase não devem ser inseridos com a notação "item[index]" e os "e" antes
     do último número ímpar e do último número par devem constar na frase;
-  
-  - Dica: para saber se um número é par, o restante da divisão dele por 2 deve  
+
+  - Dica: para saber se um número é par, o restante da divisão dele por 2 deve
     ser 0.
 
   "Numeros ímpares: XX, XX e XX. Números pares: XX, XX e XX."
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+let evenNumbers = []randomNumber
+let oddNumbers = []
+let evenNumbersResult = ''
+let oddNumbersResult = ''
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  const number = randomNumbers[i]
+
+  let isEvenNumber = number % 2 === 0
+ 
+  if (isEvenNumber) {
+    evenNumbers.push(number)
+  } else {
+    oddNumbers.push(number)
+  }
+}
+
+evenNumbersResult = evenNumbers.join(', ').replace(', 5', ' e 5')
+
+oddNumbersResult = oddNumbers.join(', ').replace(', 3', ' e 3')
+
+console.log(`Numeros ímpares: ${oddNumbersResult}. Números pares:${evenNumbersResult}.`)
