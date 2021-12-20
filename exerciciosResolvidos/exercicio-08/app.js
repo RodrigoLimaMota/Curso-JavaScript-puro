@@ -7,6 +7,12 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function toMultiply(factorA = 0, factorB = 0) {
+  const product = factorA * numberB
+  return product
+}
+// console.log(toMultiply(1,2))
+
 /*
   02
 
@@ -14,6 +20,11 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+const toDivide = function (dividend = 1, divisor = 1) {
+  const quotient = dividend / divisor
+  return quotient.toFixed(2)
+}
+// console.log(toDivide(4,3))
 
 /*
   03
@@ -27,6 +38,17 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+const returnSentence = function (sentence = 'Você deve passar um valor como argumento') {
+
+  return sentence
+
+}
+
+// for (let i = 0; i < 7; i++) {
+
+//   console.log(returnSentence(`Esta é a ${i + 1}ª vez que essa string é exibida.`))
+
+// }
 
 /*
   04
@@ -41,6 +63,18 @@
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+const transformToUpperCase = function (array = []) {
+
+  let newArray = []
+
+  for (let i = 0; i <= array.length; i++) {
+    let word = array[i].toUpperCase()
+    newArray.push(array[i].toUpperCase())
+  }
+  return newArray
+}
+
+console.log(transformToUpperCase(millennialWords))
 /*
   05
 
