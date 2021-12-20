@@ -67,14 +67,19 @@ const transformToUpperCase = function (array = []) {
 
   let newArray = []
 
-  for (let i = 0; i <= array.length; i++) {
-    let word = array[i].toUpperCase()
-    newArray.push(array[i].toUpperCase())
+  for (let i = 0; i < array.length; i++) {
+    let wordInUpperCase = array[i].toUpperCase()
+    newArray.push(wordInUpperCase)
   }
-  return newArray
-}
 
-console.log(transformToUpperCase(millennialWords))
+  return newArray
+
+}
+const millennialWordsInUpperCase = transformToUpperCase(millennialWords)
+
+// console.log(millennialWordsInUpperCase)
+
+
 /*
   05
 
@@ -87,18 +92,48 @@ console.log(transformToUpperCase(millennialWords))
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+let positiveNumbersCounter = 0
+
+
+const isPositive = function (number = 0) {
+  return number >= 1
+}
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  const isPositiveNumber = isPositive(randomNumbers[i])
+  if (isPositiveNumber) {
+    positiveNumbersCounter++
+  }
+}
+const negativesNumbers = (randomNumbers.length - positiveNumbersCounter)
+
+// console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${positiveNumbersCounter} positivos e ${negativesNumbers} negativos.`)
 
 /*
   06
 
   - Descomente a invocação da função abaixo e implemente-a;
-  - Ela deve retornar um novo array com apenas os números ímpares do array 
+  - Ela deve retornar um novo array com apenas os números ímpares do array
     passado por argumento;
-  - Exiba o novo array no console, sem inserir um console.log() dentro da  
+  - Exiba o novo array no console, sem inserir um console.log() dentro da
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+const getOddNumbers = function (array = []) {
+
+  let oddNumbers = []
+
+  for (let i = 0; i < array.length; i++) {
+    const isOddNumber = (array[i] % 2 !== 0)
+    if (isOddNumber) {
+      oddNumbers.push(array[i])
+    }
+  }
+  return oddNumbers
+}
+
+const oddNumbers = getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+// console.log(oddNumbers)
 
 /*
   07
@@ -136,3 +171,10 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+
+let sentence = ''
+
+for (let i = 0; i < functions.length; i++) {
+  sentence += `${functions[i]()} `
+}
+console.log(sentence)
