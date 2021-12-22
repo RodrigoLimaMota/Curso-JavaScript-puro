@@ -241,18 +241,22 @@ const names = ['Rafael', 'Ana Paula', 'Victor', 'Alessandro']
 const getLikesMessage = (names = []) => {
 
   const amountPeople = names.length
+  const firstName = names[0]
+  const secondName = names[1]
+  const thirdName = names[2]
+
 
   switch (amountPeople) {
     case 0:
       return 'Ninguém curtiu isso'
     case 1:
-      return `${names[0]} curtiu isso`
+      return `${firstName} curtiu isso`
     case 2:
-      return `${names[0]} e ${names[1]} curtiram isso`
+      return `${firstName} e ${secondName} curtiram isso`
     case 3:
-      return `${names[0]}, ${names[1]} e ${names[2]} curtiram isso`
+      return `${firstName}, ${secondName} e ${thirdName} curtiram isso`
     default:
-      return `${names[0]}, ${names[1]} e mais ${names.length - 2} pessoas curtiram isso`
+      return `${firstName}, ${secondName} e mais ${amountPeople - 2} pessoas curtiram isso`
   }
 }
 console.log(getLikesMessage(names))
