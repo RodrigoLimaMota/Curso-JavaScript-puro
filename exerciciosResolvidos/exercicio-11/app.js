@@ -61,7 +61,9 @@ let cars = {
     return `O ${this.name} está parado`
   },
   getColorsMessage() {
-    return `O ${this.name} está disponível nas cores ${this.colors[0]}, ${this.colors[1]} e ${this.colors[2]}`
+   const lastItem = this.colors[this.colors.length -1]
+   const colors = this.colors.join(', ').replace(`, ${lastItem}`, ` e ${lastItem}`)
+    return `O ${this.name} está disponível nas cores ${colors}`
   }
 }
 
