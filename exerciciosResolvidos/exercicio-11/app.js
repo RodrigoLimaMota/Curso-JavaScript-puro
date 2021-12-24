@@ -4,7 +4,7 @@
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
-
+var myName = 'Rodrigo'
 /*
   02
 
@@ -18,6 +18,16 @@
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+
+const printMyAge = () => {
+
+  let myAge = 35
+  console.log(myAge)
+
+}
+
+// printMyAge()
+// console.log(myAge)
 
 /*
   03
@@ -37,27 +47,53 @@
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 
+let cars = {
+  name: 'Centra',
+  brand: 'VeraVerão',
+  colors: ['Amarelo', 'Vermelho', 'Azul'],
+  isRunning: true,
+  run() {
+    this.isRunning = true
+    return `O ${this.name} está em movimento`
+  },
+  stop() {
+    this.isRunning = false
+    return `O ${this.name} está parado`
+  },
+  getColorsMessage() {
+    return `O ${this.name} está disponível nas cores ${this.colors[0]}, ${this.colors[1]} e ${this.colors[2]}`
+  }
+}
+
+
+cars.stop()
+console.log(cars.isRunning)
+console.log(cars.getColorsMessage())
+
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
-
+console.log(cars.isRunning)
 /*
   05
 
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
+cars.stop()
+console.log(cars.isRunning)
 
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
-
+console.log(cars.getColorsMessage())
 /*
   07
 
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+console.log(`O carro é um ${cars['brand']} ${cars['name']}`)
