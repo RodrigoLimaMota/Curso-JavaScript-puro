@@ -1,52 +1,48 @@
 *{
-    box-sizing:borde-box;
+    box-sizing: border-box;
 }
 button{
     background: crimson;
-    color:white;
-    margin:15px auto;
-    top:500;
     padding:6px 10px;
-    font-family: arial;
-    display: block;
+    margin: 25% auto;
+    color:white;
+    display:block;
     border: none;
-    text-transform: uppercase;
     cursor:pointer;
 
 }
 .popup-wrapper{
-    display:none;
-    height: 100%;
     width:100%;
+    height:100%;
     background: rgba(0, 0, 0, .5);
-    position: fixed;
+    position:fixed;
     top:0;
     left:0;
+    display:none;
+  
 }
 .popup{
-    max-width:300px;
-    width:100%;
-    display:block;
-    background: white;
-    margin:10% auto;
-    padding:20px;
-    position:relative;
-}
-.popup a{
-    background: crimson;
-    color: white;
-    margin:20px;
-    padding:6px 10px;
-    text-decoration: none;
-    cursor: pointer;
-}
-.popup-content{
     font-family: arial;
-    text-align:center;
+    text-align: center;
+    width:100%;
+    max-width:300px;
+    margin: 10% auto;    
+    position:relative;  
+    padding: 20px;
+    background: white;   
 }
+.popup a{    
+    background: crimson;
+    padding:6px 10px;
+    margin-top:20px;
+    color:white;
+    text-decoration: none;    
+  
+}
+
 .popup-close{
-  position:absolute;
-  top:5px;
-  right:10px;
-  cursor: pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+    cursor:pointer;
 }

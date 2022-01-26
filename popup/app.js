@@ -5,12 +5,12 @@ button.addEventListener('click', () => {
     popup.style.display = 'block'
 })
 
-popup.addEventListener('click', event => {
-    const classNameOfClickedElement = event.target.classList[0]
-    const classNames = ['popup-wrapper', 'popup-link', 'popup-close']
-    const shouldClosePopup = classNames.some(className =>
-        className === classNameOfClickedElement)
-    if (shouldClosePopup) {
-        popup.style.display = 'none'
-    }
+popup.addEventListener('click',event =>{
+    const classNameOfElementClicked = event.target.classList[0]
+    console.log(classNameOfElementClicked)
+    const classNames = ['popup-wrapper','popup-link','popup-close']
+    const shouldClosePopup = classNames.some(className => className === classNameOfElementClicked)
+    if(shouldClosePopup){
+        popup.style.display='none'
+    }    
 })
