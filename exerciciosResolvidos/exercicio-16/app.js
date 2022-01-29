@@ -6,17 +6,47 @@
 */
 
 const div = document.querySelector('div')
+const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
 const elementsInsideDiv = Array.from(div.children)
 
-elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
-  })
-})
+// elementsInsideDiv.forEach(element => {
+//   element.addEventListener('click', event => {
+//     const tagName = event.target.tagName
+//     h2.textContent = `Clicou no ${tagName.toLowerCase()}, filho da div.`
+//     event.stopPropagation()
 
-div.addEventListener('click', () => {
-  console.log('Clicou na div.')
-})
+//   })
+// })
+
+const alertClick = event => {
+  const clickedElement = event.target.tagName.toLowerCase()
+
+  if(clickedElement === 'div'){
+    console.log('Clicou na div.')
+    return
+  }
+  console.log(`Clicou no ${clickedElement}, filho da div.`) 
+}
+
+const copyAlert = ()=> {
+  console.log('Texto copiado!')
+}
+
+const showOffsets = event =>{
+  egg.textContent = `Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
+}
+
+const changeBackgroundColor = () =>{
+  egg.style.background = 'lightgoldenrodyellow'
+}
+
+div.addEventListener('click',alertClick)  
+h2.addEventListener('copy',copyAlert)
+egg.addEventListener('mousemove', showOffsets)
+button.addEventListener('click', changeBackgroundColor)
+
 
 /*
   02
@@ -76,3 +106,10 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+
+const isAnyFrontEndDeveloper = people.some(({profession}) => 
+profession === `Front-end developer`)
+
+if(isAnyFrontEndDeveloper){
+  console.log('O array people contém, no mínimo, um(a) Front-end developer.')
+}
