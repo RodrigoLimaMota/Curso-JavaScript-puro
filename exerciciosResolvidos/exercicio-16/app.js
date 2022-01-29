@@ -11,15 +11,6 @@ const egg = document.querySelector('.egg')
 const button = document.querySelector('button')
 const elementsInsideDiv = Array.from(div.children)
 
-// elementsInsideDiv.forEach(element => {
-//   element.addEventListener('click', event => {
-//     const tagName = event.target.tagName
-//     h2.textContent = `Clicou no ${tagName.toLowerCase()}, filho da div.`
-//     event.stopPropagation()
-
-//   })
-// })
-
 const alertClick = event => {
   const clickedElement = event.target.tagName.toLowerCase()
 
