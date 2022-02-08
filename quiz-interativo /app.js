@@ -1,19 +1,7 @@
 const form = document.querySelector('.quiz-form')
 const result = document.querySelector('.result')
 
-// A idéia seria introduzir esses elementos abaixo da resposta correta
-const answerQuestions = [
-    answerQuestion01 = document.createElement('p'),
-    answerQuestion02 = document.createElement('p'),
-    answerQuestion03 = document.createElement('p'),
-    answerQuestion04 = document.createElement('p'),
-    answerQuestion05 = document.createElement('p'),
-    answerQuestion06 = document.createElement('p'),
-    answerQuestion07 = document.createElement('p'),
-    answerQuestion08 = document.createElement('p'),
-    answerQuestion09 = document.createElement('p'),
-    answerQuestion10 = document.createElement('p')
-]
+
 
 // Respostas corretas
 const correctAnswers = ['B', 'C', 'C', 'A', 'E', 'B', 'B', 'C', 'D', 'A']
@@ -35,9 +23,9 @@ form.addEventListener('submit', event => {
         form.inputQuestion9.value,
         form.inputQuestion10.value
     ]
-    
-    //Esse vetor seria as referências das respostas corretas 
-    const correctAnswerOfQuestions = [
+
+    //Esse vetor possui as referências das respostas corretas 
+    const correctAnswerToQuestions = [
         document.querySelector('#correctAnswerQuestion01'),
         document.querySelector('#correctAnswerQuestion02'),
         document.querySelector('#correctAnswerQuestion03'),
@@ -49,7 +37,22 @@ form.addEventListener('submit', event => {
         document.querySelector('#correctAnswerQuestion09'),
         document.querySelector('#correctAnswerQuestion10')
     ]
+    
+    // Os elementos P abaixo, serão inseridos após a alternativa correta
+const answersParagraphs = [
+    answerQuestion01 = document.createElement('p'),
+    answerQuestion02 = document.createElement('p'),
+    answerQuestion03 = document.createElement('p'),
+    answerQuestion04 = document.createElement('p'),
+    answerQuestion05 = document.createElement('p'),
+    answerQuestion06 = document.createElement('p'),
+    answerQuestion07 = document.createElement('p'),
+    answerQuestion08 = document.createElement('p'),
+    answerQuestion09 = document.createElement('p'),
+    answerQuestion10 = document.createElement('p')
+]
 
+    //O vetor abaixo possui os textos que justificam as respostas corretas e serão inseridos abaixo delas.
     const answersText = [
      `
      Alternativa b: Entre 4 a 6 litros. São retirados 450 mililitros.    
@@ -93,22 +96,19 @@ form.addEventListener('submit', event => {
       No Japão, a expectativa de vida é em média 84 anos, enquanto na Serra Leoa é 53 anos.
       `
     ] 
-
-    //minha lógica seria inserir os paragrafos através do método "insertAdjacenteElement()"
+    //A lógica é inserir os paragrafos através do método "insertAdjacenteElement()"
     userAnswers.forEach((userAnswer, index) => {
-        answerQuestions[index].textContent = answersText[index]
+        answersParagraphs[index].textContent = answersText[index]        
 
         if (userAnswer === correctAnswers[index]) {
 
-            answerQuestions[index].setAttribute('class', 'correctAnswer')            
-            correctAnswerOfQuestions[index].insertAdjacentElement('afterend', answerQuestions[index])
-            userAnswer.classList.add('correctAnswer')
-            score += 25
+            answersParagraphs[index].setAttribute('class', 'correctAnswer')            
+            correctAnswerToQuestions[index].insertAdjacentElement('afterend', answersParagraphs[index])
+            score += 10
             return
         }
-        answerQuestions[index].setAttribute('class', 'wrongAnswer')        
-        correctAnswerOfQuestions[index].insertAdjacentElement('afterend', answerQuestions[index])
-        userAnswer.classList.add('wrongAnswer')      
+        answersParagraphs[index].setAttribute('class', 'wrongAnswer')        
+        correctAnswerToQuestions[index].insertAdjacentElement('afterend', answersParagraphs[index])
     })
     result.textContent = `Resuldado: ${score}%`
 })
